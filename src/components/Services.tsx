@@ -1,7 +1,7 @@
-export function Skills() {
+export function Service() {
     return (
         <>
-        <h2 className='text-4xl underline font-bold'>Skill Test</h2>
+        <h2 className='text-4xl underline font-bold'>Service Test</h2>
         </>
     )
 }
