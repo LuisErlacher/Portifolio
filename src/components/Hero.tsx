@@ -19,6 +19,7 @@ export function Hero() {
                     <p className="text-gray-600 text-center md:text-left">
                        Sou um desenvolvedor front-end que ama criar coisas para a web. Atualmente trabalho como freelancer e transformo ideias em sites e aplicaçoes web. 
                     </p>
+                    <br />
 
                     <div className="flex items-center gap-2 justify-center md:justify-start">
                         <a href="#" className="font-bold underline text-white">Fale Comigo</a>

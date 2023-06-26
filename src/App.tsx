@@ -1,6 +1,6 @@
 import { About } from './components/About'
 import { Hero } from './components/Hero'
-import { Service } from './components/Services'
+import { Services } from './components/Services'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Testimonials } from './components/Testimonials'
@@ -12,7 +12,7 @@ function App() {
     <main>
       <Hero />
       <About />
-      <Service />
+      <Services />
       <Projects />
       <Skills />
       <Testimonials />
