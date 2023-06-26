@@ -5,7 +5,7 @@ import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Testimonials } from './components/Testimonials'
 import './App.css'
-import { Contacts } from './components/Contact'
+import { Contact } from './components/Contact'
 
 function App() {
    return (
@@ -16,7 +16,7 @@ function App() {
       <Projects />
       <Skills />
       <Testimonials />
-      <Contacts />
+      <Contact />
     </main>
    
   )

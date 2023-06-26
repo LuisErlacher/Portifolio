@@ -1,6 +1,6 @@
 import { HiAcademicCap, HiCodeBracketSquare } from "react-icons/hi2"
 
-export default function Skills() {
+export function Skills() {
   const educations = [
     {
       name: "Curso de Desenvolvimento Web Full Stack | Dev Samurai",
