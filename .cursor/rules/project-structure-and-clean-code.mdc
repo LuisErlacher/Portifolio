@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Structure, Refactoring, and Clean Code Standards - Version: 1.0.0
+
+## Purpose & Scope
+
+This rule ensures that all modifications and new code in the project strictly respect the existing libraries, maintain the current project structure, and adhere to clean code principles. It enforces a maximum file length of 300 lines to promote maintainability and readability.
+
+## Implementation Guidelines
+- MUST use and respect all existing libraries and dependencies already present in the project (do not replace or remove without explicit justification).
+- MUST maintain the current directory and file structure unless a structural change is explicitly required and justified.
+- MUST refactor or create new files so that no single file exceeds 300 lines of code (excluding comments and blank lines where possible).
+- MUST follow clean code principles: clear naming, single responsibility, modularity, and minimal code duplication.
+- SHOULD document any significant architectural or structural changes in the memory bank.
+- SHOULD write code that is self-explanatory and easy to maintain.
+- NEVER introduce breaking changes to the project structure or dependencies without prior documentation and approval.
+
+### Examples
+```ts
+// ✅ DO: Refactor a large file into smaller modules, each under 300 lines, with clear responsibilities.
+
+// ❌ DON'T: Add new code to a file that already exceeds 300 lines, or ignore existing project structure.
+```
+
+### Restrictions
+- MUST NOT remove or replace existing libraries unless absolutely necessary and fully documented.
+- MUST NOT create files exceeding 300 lines of code.
+- MUST NOT introduce code that violates clean code principles (e.g., unclear naming, large functions, duplicated logic).
+
+## Conventions
+- Use descriptive, English-based names for files, functions, and variables.
+- Organize code by feature or responsibility, following the current project structure.
+
+## Related Rules
+- (Add links here if/when other rules are created for code style, dependency management, or architectural patterns.)
+
+## Suggested Metadata
+---
+description: Enforces respect for existing libraries, project structure, a 300-line file limit, and clean code principles for all project changes.
+globs: src/**/*, public/**/*, memory-bank/**/*
+alwaysApply: true
+---

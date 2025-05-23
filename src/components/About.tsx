@@ -1,97 +1,138 @@
-import imagem from '../img/WhatsApp_Image_2023-06-23_at_11.54.23-removebg-preview.png'
+import { motion } from "framer-motion";
+import { Section } from "./ui/section";
+import { Card, CardContent } from "./ui/card";
+import imagem from '../img/WhatsApp_Image_2023-06-23_at_11.54.23-removebg-preview.png';
+import { UserCircle, Smartphone, Mail, MapPin, CheckCircle } from 'lucide-react';
 
 export function About() {
     return (
-        <>
-        <section className="container mx-auto my-4 max-w-5xl p-4">
-          <div className="relative p-4 text-center">
-            <h2 className="text-blue-900 font-bold relative z-10">
-                <span className="mr-2 font-headline text-3xl">Sobre</span>
-                <span className="font-handwriting text-4xl">Mim</span>
-            </h2>
-            <p className="relative text-sm text-gray-600">
-                Tenho mais de 10 projetos executados e gostaria que o proximo seja o seu.
-            </p>
-            <div className="absolute left-1/2 top-3 z-0 h-10 w-10 rounded-lg bg-blue-100/40">
+        <Section
+            id="about"
+            title="Sobre Mim"
+            subtitle="Mais de 3 anos de experiência transformando ideias em realidade digital."
+            className="pb-24 pt-12 bg-secondary/50"
+            titleVariant="default"
+        >
+            <div className="container mx-auto mt-12 max-w-4xl">
+                <Card className="overflow-hidden bg-card border border-border shadow-xl rounded-xl">
+                    <CardContent className="p-0">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                            {/* Photo Column */}
+                            <motion.div 
+                                className="relative md:col-span-2 h-80 md:h-auto bg-gradient-to-br from-brand-blue/20 to-brand-blue-dark/20"
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.7, ease: "easeOut" }}
+                            >
+                                <div className="absolute inset-0 bg-brand-blue/10 backdrop-blur-sm"></div>
+                                <motion.div 
+                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                                    style={{ backgroundImage: `url(${imagem})` }}
+                                    initial={{ scale: 1.2, filter: "blur(8px)" }}
+                                    whileInView={{ scale: 1, filter: "blur(0px)" }}
+                                    transition={{ duration: 0.9, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.3 }}
+                                ></motion.div>
+                                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
+                            </motion.div>
 
+                            {/* Content Column */}
+                            <motion.div 
+                                className="md:col-span-3 p-6 md:p-10 flex flex-col bg-card"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                            >
+                                <div className="mb-8">
+                                    <p className="font-handwriting text-2xl font-bold text-brand-blue mb-1">
+                                        Olá,
+                                    </p>
+                                    <p className="mb-1 text-lg text-foreground">
+                                        <span className="mr-1">Meu nome é</span>
+                                        <span className="font-headline font-bold uppercase text-brand-blue">
+                                            Luis Paulo
+                                        </span>
+                                    </p>
+                                    <motion.div 
+                                        className="h-1.5 w-24 bg-gradient-to-r from-brand-blue to-brand-blue-dark rounded-full mb-6"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "6rem" }}
+                                        viewport={{ once: true, amount: 0.5 }}
+                                        transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+                                    ></motion.div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 text-sm font-sans">
+                                    {[{
+                                        icon: <UserCircle className="h-5 w-5 text-brand-blue" />,
+                                        label: "Idade:",
+                                        value: "32 anos"
+                                    }, {
+                                        icon: <Smartphone className="h-5 w-5 text-brand-blue" />,
+                                        label: "Celular:",
+                                        value: "+55 11 9.4522-4112",
+                                        href: "tel:+5511945224112"
+                                    }, {
+                                        icon: <Mail className="h-5 w-5 text-brand-blue" />,
+                                        label: "Email:",
+                                        value: "lperlacher2@gmail.com",
+                                        href: "mailto:lperlacher2@gmail.com"
+                                    }, {
+                                        icon: <MapPin className="h-5 w-5 text-brand-blue" />,
+                                        label: "Endereço:",
+                                        value: "Santa Isabel - SP",
+                                        href: "https://goo.gl/maps/baw34LozChPnLrFg9",
+                                        target: "_blank"
+                                    }, {
+                                        icon: <CheckCircle className="h-5 w-5 text-green-500" />,
+                                        label: "Disponível:",
+                                        value: <span className="flex items-center">Freelancer <span className="relative flex h-2 w-2 ml-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span></span>,
+                                        noLink: true
+                                    }].map((item, index) => (
+                                        <motion.div 
+                                            key={item.label}
+                                            className="flex items-center gap-3"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true, amount: 0.5 }}
+                                            transition={{ duration: 0.5, delay: 0.5 + index * 0.1, ease: "easeOut" }}
+                                        >
+                                            {item.icon}
+                                            <span className="text-muted-foreground font-medium min-w-[70px]">{item.label}</span>
+                                            {item.href ? (
+                                                <a
+                                                    href={item.href}
+                                                    target={item.target || "_self"}
+                                                    className="text-foreground hover:text-brand-blue transition-colors break-all"
+                                                >
+                                                    {item.value}
+                                                </a>
+                                            ) : (
+                                                <span className={`text-foreground ${item.noLink ? '' : 'break-all'}`}>{item.value}</span>
+                                            )}
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <div className="mt-auto pt-8">
+                                    <motion.p 
+                                        className="text-muted-foreground text-base leading-relaxed"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.5 }}
+                                        transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
+                                    >
+                                        Desenvolvedor Front-End apaixonado por criar interfaces elegantes e funcionais. 
+                                        Especializado em React, TypeScript e Tailwind CSS para entregar experiências digitais de alta qualidade e performance.
+                                    </motion.p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
-          </div>
-          <div className="mx-auto mt-20 max-w-lg">
-            <div className="relative w-full rounded-lg bg-blue-100 p-4 ps-20 md:h-64 md:ps-48">
-                <div className=' h-full w-full rounded-lg bg-gray-50 p-4'>
-                    <p className='font-handwriting text-lg font-bold'>Olá,</p>
-                        <p>
-                       <span className='mr-1'>Meu nome é</span>
-                       <span className='font-headline font-bold uppercase text-blue-900'>
-                        Luis Paulo
-                       </span> 
-                    </p>
-                    <table className="mt-4 w-full text-sm">
-              <tbody>
-                <tr>
-                  <td className="font-headline font-bold uppercase text-blue-900">
-                    Idade:
-                  </td>
-                  <td>32</td>
-                </tr>
-                <tr>
-                  <td className="font-headline font-bold uppercase text-blue-900">
-                    Celular:
-                  </td>
-                  <td>
-                    <a
-                      href="tel:+5511945224112"
-                      className="underline hover:text-blue-800"
-                    >
-                      +55 11 9.4522-4112
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-headline font-bold uppercase text-blue-900">
-                    Email:
-                  </td>
-                  <td>
-                    <a
-                      href="mailto:lperlacher2@gmail.com"
-                      className="underline hover:text-blue-800"
-                    >
-                      lperlacher2@gmail.com
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-headline font-bold uppercase text-blue-900">
-                    Endereço:
-                  </td>
-                  <td>
-                    <a
-                      href="https://goo.gl/maps/baw34LozChPnLrFg9"
-                      target="_blank"
-                      className="underline hover:text-blue-800"
-                    >
-                      Santa Isabel - SP
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-headline font-bold uppercase text-blue-900">
-                    Disponível:
-                  </td>
-                  <td>
-                    <span className="relative flex h-3 w-3">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-                <div className="absolute -left-2 -top-4 h-24 w-20 rounded-lg bg-gray-600 bg-cover bg-center md:-left-12 md:-top-12 md:h-72 md:w-56" style={{ backgroundImage: `url(${imagem})` }}></div>
-                </div>
-            </div>
-          </div>
-        </section>
-        </>
-    )
+        </Section>
+    );
 }

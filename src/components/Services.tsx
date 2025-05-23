@@ -1,3 +1,4 @@
+import { Section } from "./ui/section";
 import {
     HiCommandLine,
     HiComputerDesktop,
@@ -26,36 +27,25 @@ export function Services() {
       ]
 
     return (
-        <>
-        <section className='text-4xl underline font-bold'>
-        <div className="p-4 text-center">
-        <p className="text-sm font-semibold uppercase text-blue-600">
-          O que faço de melhor
-        </p>
-        <h2 className="mb-2 font-bold text-blue-900">
-          <span className="mr-2 font-headline text-3xl">Meus</span>
-          <span className="font-handwriting text-4xl">Serviços</span>
-        </h2>
-        <p className=" text-sm text-gray-600">
-          Posso atender uma gama completa de serviços, do front-end ao back-end
-          com banco de dados e sistemas.
-        </p>
-        </div>
+      <Section
+        id="services"
+        title="Meus Serviços"
+        subtitle="Posso atender uma gama completa de serviços, do front-end ao back-end com banco de dados e sistemas."
+        bgVariant="light"
+        className="py-16"
+      >
         <div className="mt-6 flex flex-col gap-2 md:flex-row">
-        {services.map((service, index) => (
-          <div
-            className="basis-1/3 rounded-lg bg-blue-700 p-4 text-white"
-            key={`service-${index}`}
-          >
-            <div className="mb-2">{service.icon}</div>
-            <h3 className="text-xl font-bold">{service.title}</h3>
-            <p className="text-sm">{service.description}</p>
-          </div>
-        ))}
-
+          {services.map((service, index) => (
+            <div
+              className="basis-1/3 rounded-lg bg-primary text-primary-foreground p-4 shadow-md"
+              key={`service-${index}`}
+            >
+              <div className="mb-2">{service.icon}</div>
+              <h3 className="text-xl font-bold">{service.title}</h3>
+              <p className="text-sm">{service.description}</p>
+            </div>
+          ))}
         </div>
-        <br />
-        </section>
-        </>
+      </Section>
     )
 }

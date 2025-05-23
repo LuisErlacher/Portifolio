@@ -1,0 +1,42 @@
+# Regras para o Sistema de Temas do Portfólio
+
+## Padrões de Cores
+- Usar SEMPRE classes baseadas no tema em vez de cores fixas.
+- Para texto normal: `text-foreground` (padrão), `text-text-heading` (títulos), `text-text-body` (corpo), `text-muted-foreground` (secundário).
+- Para fundos: `bg-background` (padrão), `bg-card`, `bg-muted`, `bg-accent`, `bg-primary`.
+- Para elementos destacados: `text-brand-blue`, `text-brand-blue-light` ou `text-brand-blue-dark`.
+
+## Regras Específicas
+- NUNCA usar valores de cor fixos como `text-gray-800` ou `bg-white`.
+- Usar `border-border` para bordas em vez de cores específicas.
+- Usar `hover:bg-accent` para estados hover.
+- Para contrastes, usar pares de combinação (ex: `bg-card text-card-foreground`).
+
+## Componentes
+- Cartões: `bg-card text-card-foreground border-border`
+- Botões: Usar variantes pré-definidas ou classes temáticas
+- Seções: Usar `bgVariant` do componente Section ou classes temáticas
+- Links: `text-text-link hover:text-text-link-hover`
+
+## Componentes Padronizados
+- Seções devem usar o componente `Section` que aceita `bgVariant`, `titleVariant` e `shape`
+- Cards devem usar `bg-card` e `text-card-foreground`
+- Formulários devem usar `bg-background` e `text-foreground` com `border-border`
+- Botões devem usar as variantes definidas no componente `Button`
+
+## Opções de bgVariant para Section
+- `default`: Fundo base do tema
+- `light`: Fundo secundário sutilmente diferenciado
+- `dark`: Fundo escuro com gradiente
+- `gradient`: Gradiente azul da marca
+
+## Notas sobre Implementação
+- Todas as variáveis de tema estão definidas em `App.css` como variáveis CSS
+- As variáveis mudam automaticamente quando a classe `dark` é adicionada ao elemento html
+- Todas as cores são definidas em formato HSL para facilitar manipulação
+- O tailwind.config.js já tem configurações para acessar as variáveis CSS como classes
+
+## Testes e Verificação
+- Sempre testar em ambos os temas (claro/escuro)
+- Verificar contraste para acessibilidade
+- Confirmar que elementos visuais mantêm coerência em ambos os temas 
