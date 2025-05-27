@@ -62,17 +62,17 @@ export function Projects() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full overflow-hidden bg-card border-border hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-300 group rounded-lg">
-              <CardContent className="p-0 h-full flex flex-col">
+            <Card className="h-auto overflow-hidden bg-card border-border hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-300 group rounded-lg">
+              <CardContent className="p-0 h-auto flex flex-col">
                 <div
-                  className="aspect-video w-full bg-contain bg-background bg-center bg-no-repeat transition-all duration-700 group-hover:scale-105"
+                  className="aspect-video h-auto  w-full bg-contain bg-background bg-center bg-no-repeat transition-all duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('${project.image}')` }}
                 />
                 <div className="p-5 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold text-gray-50 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-300 mb-3">
+                  <p className="text-sm text-white/80 mb-3">
                     {project.description}
                   </p>
                   
@@ -80,7 +80,7 @@ export function Projects() {
                     {project.tags.map((tag, tagIndex) => (
                       <span 
                         key={tagIndex}
-                        className="px-2 py-1 text-xs rounded-full bg-brand-blue-dark/30 text-brand-blue-light"
+                        className="px-2 py-1 text-xs rounded-full bg-brand-blue-dark/30 text-white/80"
                       >
                         {tag}
                       </span>

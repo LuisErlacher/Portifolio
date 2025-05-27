@@ -1,0 +1,39 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { motion } from "framer-motion";
+import { Section } from "./ui/section";
+import { TypedText } from "./ui/typed-text";
+import { Button } from "./ui/button";
+import { Download } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useTheme } from "./context/ThemeContext";
+export function Hero() {
+    const { theme } = useTheme();
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
+    // Calculate the movement for parallax effect
+    const calcParallax = (factor) => {
+        return {
+            x: (mousePosition.x - window.innerWidth / 2) / factor,
+            y: (mousePosition.y - window.innerHeight / 2) / factor,
+        };
+    };
+    return (_jsx(Section, { id: "home", bgVariant: "dark", shape: "rounded-br", className: "pt-32 pb-12 md:pt-40 md:pb-24 overflow-hidden", children: _jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-8 relative", children: [_jsx("div", { className: "absolute inset-0 w-full h-full overflow-hidden pointer-events-none", children: [1, 2, 3, 4, 5].map((i) => (_jsx(motion.div, { className: "absolute opacity-10 rounded-full bg-brand-blue", style: {
+                            width: Math.random() * 200 + 50,
+                            height: Math.random() * 200 + 50,
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                        }, animate: {
+                            x: calcParallax(i * 10 + 20).x,
+                            y: calcParallax(i * 10 + 20).y,
+                        }, transition: { type: "spring", stiffness: 10, damping: 20 } }, i))) }), _jsx("div", { className: "basis-1/2 z-10", children: _jsxs(motion.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5 }, children: [_jsxs("h1", { className: "mb-6 text-center md:text-left", children: [_jsx(motion.span, { className: "font-handwriting block text-3xl text-center md:text-left text-brand-blue-light", initial: { opacity: 0, y: -20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.2 }, children: "Ol\u00E1, me chamo" }), _jsxs(motion.span, { className: "font-headline text-5xl lg:text-6xl font-semibold inline-block text-text-heading", initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.5, delay: 0.4 }, children: ["Luis", " "] }), _jsx(motion.span, { className: "font-headline text-5xl lg:text-6xl font-light text-brand-blue inline-block", initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.5, delay: 0.6 }, children: "Paulo" })] }), _jsxs(motion.h2, { className: "font-headline font-medium text-lg md:text-xl flex items-center gap-2 text-center md:text-left mb-6 text-muted-foreground", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.8 }, children: [_jsx("div", { className: "h-1 w-12 rounded-full bg-brand-blue dark:bg-brand-blue-light" }), _jsx(TypedText, { text: "Desenvolvedor React.js Front-End", typingSpeed: 40, delay: 1000 })] }), _jsx(motion.p, { className: "text-text-body text-center md:text-left mb-8 max-w-lg mx-auto md:mx-0 text-base md:text-lg leading-relaxed", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 1 }, children: "Sou um desenvolvedor front-end que ama criar coisas para a web. Atualmente trabalho como freelancer e transformo ideias em sites e aplica\u00E7\u00F5es web modernas e responsivas." }), _jsxs(motion.div, { className: "flex items-center gap-4 justify-center md:justify-start", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 1.2 }, children: [_jsx(Button, { variant: "gradient", className: "shadow-lg shadow-blue-600/20", onClick: () => {
+                                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                                        }, children: "Fale Comigo" }), _jsxs(Button, { variant: "outline", className: "text-foreground bg-background/10 hover:text-brand-blue dark:hover:text-brand-blue-light border-border hover:border-brand-blue dark:hover:border-brand-blue-light hover:bg-accent/50 gap-2 items-center group", onClick: () => {
+                                            window.open("https://ugkfofluhhpdgfyehema.supabase.co/storage/v1/object/public/curriculo//Luis%20Paulo%20Erlacher%20Full-Stack%20(1).pdf", "_blank");
+                                        }, children: [_jsx(Download, { className: "w-5 h-5 text-muted-foreground group-hover:text-brand-blue dark:group-hover:text-brand-blue-light transition-colors" }), _jsx("span", { className: "font-medium", children: "Baixe meu CV" })] })] })] }) }), _jsx(motion.div, { className: "basis-1/2", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8, delay: 0.5 }, children: _jsxs("div", { className: "relative w-full max-w-md mx-auto", children: [_jsx("div", { className: "absolute -inset-0.5 bg-gradient-to-r from-brand-blue-dark to-brand-blue rounded-lg blur opacity-20 animate-pulse" }), _jsxs("div", { className: "relative bg-card rounded-lg p-8 h-full", children: [_jsx("div", { className: "aspect-square rounded-lg overflow-hidden bg-muted flex items-center justify-center", children: _jsx("svg", { className: "w-full h-full text-muted-foreground", fill: "currentColor", viewBox: "0 0 24 24", children: _jsx("path", { d: "M12 14.25c-1.242 0-2.25-1.008-2.25-2.25s1.008-2.25 2.25-2.25 2.25 1.008 2.25 2.25-1.008 2.25-2.25 2.25zM12 19.875c-3.309 0-6.675-2.532-8.242-4.125-0.75-0.75-0.75-2.25 0-3-1.566-1.591-4.932-4.125-8.242-4.125 0-1.875 3.309-7.875 8.242-7.875 3.891 0 7.134 2.063 8.742 3.563 1.608-1.5 4.851-3.563 8.742-3.563 4.933 0 8.242 6 8.242 7.875-3.309 0-6.675 2.533-8.242 4.125 0.75 0.75 0.75 2.25 0 3-1.566 1.592-4.932 4.125-8.242 4.125z" }) }) }), _jsxs("div", { className: "mt-4 flex justify-between", children: [_jsxs("div", { children: [_jsx("div", { className: "h-2 bg-muted rounded w-20" }), _jsx("div", { className: "h-2 bg-muted rounded w-12 mt-2" })] }), _jsx("div", { className: "h-6 w-6 bg-brand-blue rounded-full flex items-center justify-center shadow-lg", children: _jsx("svg", { className: "w-4 h-4 text-primary-foreground", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M5 13l4 4L19 7" }) }) })] })] })] }) })] }) }));
+}
