@@ -4,52 +4,36 @@ import { ExternalLink } from "lucide-react";
 import { Section } from "./ui/section";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { useTheme } from "./context/ThemeContext";
 
 export function Projects() {
+  const { theme } = useTheme();
   const projects = [
     {
-      title: "Projeto 1",
-      description: "Descrição do projeto 1",
+      title: "Site Institucional Automatizase",
+      description: "criação do site institucional da empresa Automatizase em React, Vite, TailwindCSS com foco em performance, e coleta de dados com pixel tracking",
       image:
-        "https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1605&q=80",
-      link: "#",
+        "https://ugkfofluhhpdgfyehema.supabase.co/storage/v1/object/public/imagens//AUTOMATIZASE%20(1).svg",
+      link: "https://automatizase.com.br",
       tags: ["React", "TailwindCSS"],
       colSpan: "col-span-1",
     },
     {
-      title: "Projeto 2",
-      description: "Descrição do projeto 2",
+      title: "Criação SaaS Automatizase",
+      description: "Adaptação de projeto open source legado de multiatendimento e gestao de IA's em Vue.js Vite, Tailwindcss, Ruby on Rails, PostgreSQL, Docker, e integração com API's de IA's. Utilize a conta de demosntração: email: teste@teste.com senha: Senhateste123.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYnNpdGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      link: "#",
-      tags: ["TypeScript", "Next.js", "Prisma"],
+      link: "https://chat.automatizase.cloud",
+      tags: ["TypeScript", "Vue.js", "Ruby on Rails", "PostgreSQL", "Docker"],
       colSpan: "col-span-1 md:col-span-2",
     },
     {
-      title: "Projeto 3",
-      description: "Descrição do projeto 3",
+      title: "Sistema de Gestão de Clínicas",
+      description: "Sistema de gestão de clínicas com integração com API's de IA's, e integração com API's de pagamentos, e integração com API's de agendamento",
       image:
         "https://media.istockphoto.com/id/1305995602/photo/responsive-floating-responsive-design.jpg?b=1&s=170667a&w=0&k=20&c=uFqBz27v_B0UxcslnvZxd9c0D9eJAef7veRZf6b-v-A=",
       link: "#",
-      tags: ["React", "Node.js", "MongoDB"],
-      colSpan: "col-span-1",
-    },
-    {
-      title: "Projeto 4",
-      description: "Descrição do projeto 4",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29kaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      link: "#",
-      tags: ["React Native", "Expo"],
-      colSpan: "col-span-1",
-    },
-    {
-      title: "Projeto 5",
-      description: "Descrição do projeto 5",
-      image:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      link: "#",
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["React", "Vite", "TailwindCSS", "Shadcn", "supabase", "postgreSQL", "API REST", "Trigger"],
       colSpan: "col-span-1",
     },
   ];
@@ -85,10 +69,10 @@ export function Projects() {
                   style={{ backgroundImage: `url('${project.image}')` }}
                 />
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold text-text-heading mb-2">
+                  <h3 className="text-xl font-semibold text-gray-50 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-text-body mb-3">
+                  <p className="text-sm text-gray-300 mb-3">
                     {project.description}
                   </p>
                   
@@ -105,8 +89,8 @@ export function Projects() {
                   
                   <div className="mt-auto pt-4">
                     <Button 
-                      variant="outline"
-                      className="w-full text-sm border-border text-foreground hover:bg-accent hover:text-brand-blue hover:border-brand-blue gap-2 flex items-center justify-center transition-colors"
+                      variant="gradient"
+                      className="w-full text-sm border-gray-600 text-gray-200 hover:bg-white/10 hover:text-white hover:border-white/80 gap-2 flex items-center justify-center transition-colors"
                       asChild
                     >
                       <a href={project.link} target="_blank" rel="noopener noreferrer">

@@ -1,7 +1,9 @@
 import { FaQuoteLeft } from "react-icons/fa"
 import { Section } from "./ui/section"
+import { useTheme } from "./context/ThemeContext";
 
 export function Testimonials() {
+  const { theme } = useTheme();
   return (
     <Section
       id="testimonials"

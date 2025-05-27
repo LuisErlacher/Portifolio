@@ -1,6 +1,8 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTheme } from "./context/ThemeContext";
 
 export function Footer() {
+  const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
   
   return (

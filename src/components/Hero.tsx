@@ -4,8 +4,10 @@ import { TypedText } from "./ui/typed-text";
 import { Button } from "./ui/button";
 import { Download } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTheme } from "./context/ThemeContext";
 
 export function Hero() {
+  const { theme } = useTheme();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {

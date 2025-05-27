@@ -7,8 +7,8 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   title?: string;
   subtitle?: string;
   children: React.ReactNode;
-  titleVariant?: "default" | "gradient" | "light";
-  bgVariant?: "default" | "dark" | "light" | "gradient";
+  titleVariant?: "default" | "dark" | "light";
+  bgVariant?: "default" | "dark" | "light";
   shape?: "none" | "rounded-tl" | "rounded-br" | "rounded-tr" | "rounded-bl";
 }
 
@@ -48,9 +48,8 @@ export function Section({
   // Determine background classes based on variant
   const bgClasses = {
     default: "bg-background",
-    dark: "bg-gradient-to-tr from-gray-950 to-gray-900 text-white",
-    light: "bg-secondary/50",
-    gradient: "bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white"
+    dark: "bg-background",
+    light: "bg-background"
   };
 
   // Determine shape classes
@@ -64,9 +63,9 @@ export function Section({
 
   // Determine title classes
   const titleClasses = {
-    default: "text-text-heading font-bold",
-    gradient: "bg-gradient-to-r from-brand-blue to-brand-blue-dark bg-clip-text text-transparent font-bold",
-    light: "text-white font-bold"
+    default: "text-body",
+    light: "text-body",
+    dark: "text-body",
   };
 
   return (

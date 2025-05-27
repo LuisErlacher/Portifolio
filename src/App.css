@@ -6,83 +6,97 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: #ffffff;
+    --foreground: #0a0a0c;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: #ffffff;
+    --card-foreground: #0a0a0c;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0c;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: #2563eb;
+    --primary-foreground: #f8fafc;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #18181b;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: #f1f5f9;
+    --accent-foreground: #18181b;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #2563eb;
 
     --radius: 0.5rem;
 
-    --brand-blue: 221.2 83.2% 53.3%;
-    --brand-blue-light: 217.2 91.2% 59.8%;
-    --brand-blue-dark: 224.3 76.3% 48%;
+    --brand-blue: #2563eb;
+    --brand-blue-light: #3b82f6;
+    --brand-blue-dark: #1e40af;
     
-    --text-heading: 222.2 84% 4.9%;
-    --text-body: 215.4 16.3% 46.9%;
-    --text-link: 221.2 83.2% 53.3%;
-    --text-link-hover: 224.3 76.3% 48%;
+    --gradient-primary-from: #4f46e5;
+    --gradient-primary-to: #7c3aed;
+    --gradient-secondary-from: #2563eb;
+    --gradient-secondary-to: #0891b2;
+    --gradient-accent-from: #7c3aed;
+    --gradient-accent-to: #2563eb;
+
+    --text-heading: #0a0a0c;
+    --text-body: #64748b;
+    --text-link: #2563eb;
+    --text-link-hover: #1e40af;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: #0a0a0c;
+    --foreground: #f8fafc;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: #0a0a0c;
+    --card-foreground: #f8fafc;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: #0a0a0c;
+    --popover-foreground: #f8fafc;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: #3b82f6;
+    --primary-foreground: #18181b;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: #23272f;
+    --secondary-foreground: #f8fafc;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: #23272f;
+    --muted-foreground: #a3adc2;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: #23272f;
+    --accent-foreground: #f8fafc;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #f8fafc;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-    
-    --brand-blue: 217.2 91.2% 59.8%;
-    --brand-blue-light: 210 100% 66%;
-    --brand-blue-dark: 213.2 94% 50%;
-    
-    --text-heading: 210 40% 98%;
-    --text-body: 215 20.2% 65.1%;
-    --text-link: 217.2 91.2% 59.8%;
-    --text-link-hover: 210 100% 66%;
+    --border: #23272f;
+    --input: #23272f;
+    --ring: #1e40af;
+
+    --brand-blue: #3b82f6;
+    --brand-blue-light: #60a5fa;
+    --brand-blue-dark: #2563eb;
+
+    --gradient-primary-from: #6366f1;
+    --gradient-primary-to: #8b5cf6;
+    --gradient-secondary-from: #3b82f6;
+    --gradient-secondary-to: #06b6d4;
+    --gradient-accent-from: #8b5cf6;
+    --gradient-accent-to: #ec4899;
+
+    --text-heading: #f8fafc;
+    --text-body: #a3adc2;
+    --text-link: #3b82f6;
+    --text-link-hover: #60a5fa;
   }
 }
 
@@ -115,6 +129,12 @@
   }
 }
 
+@layer utilities {
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-[var(--gradient-primary-from)] to-[var(--gradient-primary-to)];
+  }
+}
+
 @layer components {
   .button {
     @apply inline-flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-md hover:shadow-lg transition-shadow;
@@ -123,12 +143,36 @@
   .text-gradient {
     @apply bg-gradient-to-r from-brand-blue-light to-brand-blue bg-clip-text text-transparent;
   }
+  .service-card {
+    @apply relative p-8 rounded-2xl bg-gradient-primary shadow-lg text-white shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden;
+  }
+  .service-card-header {
+    @apply flex flex-col space-y-1.5 p-6 text-white dark:text-white;
+  }
+  .service-card-title {
+    @apply text-2xl font-semibold leading-none tracking-tight text-white dark:text-white;
+  }
+  .service-card-description {
+    @apply text-sm text-white dark:text-white;
+  }
+  .service-card-content {
+    @apply text-white dark:text-white;
+  }
+  .service-card-footer {
+    @apply flex items-center p-6 pt-0;
+  }
   
+
   .section-title {
     @apply text-3xl md:text-4xl font-headline font-bold mb-4;
   }
   
   .section-subtitle {
     @apply text-xl text-muted-foreground mb-8;
+  }
+
+  .gradient-animated {
+    background-size: 200% 200%;
+    @apply animate-gradient-shift;
   }
 }

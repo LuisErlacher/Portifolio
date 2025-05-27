@@ -1,7 +1,9 @@
 import { HiAcademicCap, HiCodeBracketSquare } from "react-icons/hi2"
 import { Section } from "./ui/section"
+import { useTheme } from "./context/ThemeContext";
 
 export function Skills() {
+  const { theme } = useTheme();
   const educations = [
     {
       name: "Curso de Desenvolvimento Web Full Stack | Dev Samurai",
