@@ -65,7 +65,7 @@ export function Projects() {
             <Card className="h-full overflow-hidden bg-card border-border hover:shadow-xl hover:shadow-brand-blue/10 transition-all duration-300 group rounded-lg">
               <CardContent className="p-0 h-full flex flex-col">
                 <div
-                  className="aspect-video w-full bg-cover bg-center transition-all duration-700 group-hover:scale-105"
+                  className="aspect-video w-full bg-contain bg-background bg-center bg-no-repeat transition-all duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('${project.image}')` }}
                 />
                 <div className="p-5 flex flex-col flex-grow">

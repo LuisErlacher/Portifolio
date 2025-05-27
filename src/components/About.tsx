@@ -3,9 +3,17 @@ import { Section } from "./ui/section";
 import imagem from '../img/WhatsApp_Image_2023-06-23_at_11.54.23-removebg-preview.png';
 import { UserCircle, Smartphone, Mail, MapPin, CheckCircle } from 'lucide-react';
 import { useTheme } from "./context/ThemeContext";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function About() {
     const { theme } = useTheme();
+    const birthDate = new Date(1991, 4, 3); // Mês começa do zero: 0=jan, 4=maio
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const m = today.getMonth() - birthDate.getMonth();
+if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+  age--;
+}
     return (
         <Section
             id="about"
@@ -71,12 +79,13 @@ export function About() {
                                 {[{
                                     icon: <UserCircle className="h-5 w-5 text-brand-blue" />,
                                     label: "Idade:",
-                                    value: "32 anos"
+                                    value: age + " anos"
                                 }, {
-                                    icon: <Smartphone className="h-5 w-5 text-brand-blue" />,
+                                    icon: <FaWhatsapp className="h-5 w-5 text-brand-blue" />,
                                     label: "Celular:",
-                                    value: "+55 11 9.4522-4112",
-                                    href: "tel:+5511945224112"
+                                    value: "(11) 94522-4112",
+                                    href: "https://wa.me/+5511945224112",
+                                    target: "_blank"
                                 }, {
                                     icon: <Mail className="h-5 w-5 text-brand-blue" />,
                                     label: "Email:",
@@ -96,24 +105,24 @@ export function About() {
                                 }].map((item, index) => (
                                     <motion.div 
                                         key={item.label}
-                                        className="flex items-center gap-3"
+                                        className="flex items-center gap-2"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, amount: 0.5 }}
                                         transition={{ duration: 0.5, delay: 0.5 + index * 0.1, ease: "easeOut" }}
                                     >
                                         {item.icon}
-                                        <span className="text-muted-foreground font-medium min-w-[70px]">{item.label}</span>
+                                        <span className="text-muted-foreground font-medium">{item.label}</span>
                                         {item.href ? (
                                             <a
                                                 href={item.href}
                                                 target={item.target || "_self"}
-                                                className="text-foreground hover:text-brand-blue transition-colors break-all"
+                                                className="text-foreground hover:text-brand-blue transition-colors whitespace-nowrap"
                                             >
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <span className={`text-foreground ${item.noLink ? '' : 'break-all'}`}>{item.value}</span>
+                                            <span className={`text-foreground ${item.noLink ? '' : 'break-all  whitespace-nowrap'}`}>{item.value}</span>
                                         )}
                                     </motion.div>
                                 ))}

@@ -132,6 +132,9 @@ export function Hero() {
               <Button 
                 variant="outline" 
                 className="text-foreground bg-background/10 hover:text-brand-blue dark:hover:text-brand-blue-light border-border hover:border-brand-blue dark:hover:border-brand-blue-light hover:bg-accent/50 gap-2 items-center group"
+                onClick={() => {
+                  window.open("https://ugkfofluhhpdgfyehema.supabase.co/storage/v1/object/sign/curriculo/Luis%20Paulo%20Erlacher%20Full-Stack%20(1).pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBkNjNjZjgxLWY1ODAtNDg5Yi1hODQxLWM5YTU4Y2EzM2RkYyJ9.eyJ1cmwiOiJjdXJyaWN1bG8vTHVpcyBQYXVsbyBFcmxhY2hlciBGdWxsLVN0YWNrICgxKS5wZGYiLCJpYXQiOjE3NDgzNjMyNTEsImV4cCI6MTc3OTg5OTI1MX0.sfUV34nVmBqbrd7ItkqGv7R9jshemJiNsE2b8sF7o_M", "_blank");
+                }}
               >
                 <Download className="w-5 h-5 text-muted-foreground group-hover:text-brand-blue dark:group-hover:text-brand-blue-light transition-colors" />
                 <span className="font-medium">Baixe meu CV</span>
